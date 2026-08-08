@@ -1,0 +1,328 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MODRIDE - Car Modified Parts</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #111;
+      color: white;
+    }
+
+    header {
+      background: #1a1a1a;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #ff3c00;
+    }
+
+    .cart {
+      background: #ff3c00;
+      padding: 10px 18px;
+      border-radius: 6px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 70px 20px;
+      background: linear-gradient(135deg, #1b1b1b, #080808);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .hero span {
+      color: #ff3c00;
+    }
+
+    .hero p {
+      color: #aaa;
+      font-size: 18px;
+    }
+
+    .products {
+      padding: 50px 8%;
+    }
+
+    .products h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 35px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: #1c1c1c;
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid #333;
+      transition: 0.3s;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      border-color: #ff3c00;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin: 18px 0 10px;
+    }
+
+    .price {
+      color: #ff3c00;
+      font-size: 21px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      background: #ff3c00;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e53500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #080808;
+      color: #777;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      header {
+        padding: 18px 5%;
+      }
+
+      .products {
+        padding: 35px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">MODRIDE</div>
+  <div class="cart">
+    🛒 Cart: <span id="cartCount">0</span>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Upgrade Your <span>Ride</span></h1>
+  <p>Premium car modified parts</p>
+</section>
+
+<section class="products">
+  <h2>Modified Car Parts</h2>
+
+  <div class="product-grid">
+
+    <div class="card">
+      <img src="https://www.maxtondesign.co.uk/image/cache/catalog/product/20240323/20240323230748_65ff60c479dee-1000x750.jpg" alt=" BMW M4 spoiler">
+      <h3> BMW M4 spoiler</h3>
+      <div class="price">₹18,999</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://4wheelonline.com/images/brands/Akrapovic/akrapovic-volkswagen-rear-carbon-fiber-diffusers-2.jpg" alt="Rear Diffuser">
+      <h3>Rear Diffuser</h3>
+      <div class="price">₹7,499</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://acko-cms.ackoassets.com/Rear_Spoiler_568baae62e.png" alt="Roof Spoiler">
+      <h3>Roof Spoiler</h3>
+      <div class="price">₹4,999</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://down-ph.img.susercontent.com/file/dabab943a29c744b4f4acac0bae353fe" alt="Side Skirt Set">
+      <h3>Side Skirt Set</h3>
+      <div class="price">₹9,999</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=600&q=80" alt="LED Headlight">
+      <h3>LED Headlight</h3>
+      <div class="price">₹12,999</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=600&q=80" alt="LED Tail Light">
+      <h3>LED Tail Light</h3>
+      <div class="price">₹8,999</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=600&q=80" alt="Fog Lamp Kit">
+      <h3>Fog Lamp Kit</h3>
+      <div class="price">₹3,999</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=600&q=80" alt="DRL Light Set">
+      <h3>DRL Light Set</h3>
+      <div class="price">₹2,999</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=600&q=80" alt="Alloy Wheels">
+      <h3>Alloy Wheels</h3>
+      <div class="price">₹32,999</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=600&q=80" alt="Sports Exhaust">
+      <h3>Sports Exhaust</h3>
+      <div class="price">₹14,999</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=600&q=80" alt="Carbon ORVM Cover">
+      <h3>Carbon ORVM Cover</h3>
+      <div class="price">₹2,499</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=600&q=80" alt="Front Grille">
+      <h3>Front Grille</h3>
+      <div class="price">₹5,999</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=600&q=80" alt="Bonnet Scoop">
+      <h3>Bonnet Scoop</h3>
+      <div class="price">₹6,499</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=600&q=80" alt="Fender Flare Set">
+      <h3>Fender Flare Set</h3>
+      <div class="price">₹8,499</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=600&q=80" alt="Performance Air Filter">
+      <h3>Performance Air Filter</h3>
+      <div class="price">₹3,499</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=600&q=80" alt="Steering Wheel">
+      <h3>Steering Wheel</h3>
+      <div class="price">₹9,999</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80" alt="Ambient Light Kit">
+      <h3>Ambient Light Kit</h3>
+      <div class="price">₹4,499</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1517026575980-3e1e2dedeab4?auto=format&fit=crop&w=600&q=80" alt="Android Car Screen">
+      <h3>Android Car Screen</h3>
+      <div class="price">₹15,999</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=600&q=80" alt="Racing Seat Cover">
+      <h3>Racing Seat Cover</h3>
+      <div class="price">₹6,999</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" alt="Universal Lip Spoiler">
+      <h3>Universal Lip Spoiler</h3>
+      <div class="price">₹3,999</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 MODRIDE -- Car Modified Parts
+</footer>
+
+<script>
+  let cart = 0;
+
+  function addToCart() {
+    cart++;
+    document.getElementById("cartCount").textContent = cart;
+  }
+</script>
+
+</body>
+</html>
